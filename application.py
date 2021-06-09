@@ -32,11 +32,15 @@ def page_not_found(e):
 	return render_template('500.html'), 500
 
 
-
 @app.route('/')
-@login_required	
+#@login_required	
 def index():
 	return render_template(f'community-{LANGUAGE}.html')
+
+
+@app.route('/start')
+def start():
+	return render_template(f'start-{LANGUAGE}.html')
 
 
 @app.route('/register')
